@@ -9,7 +9,9 @@
     "server:dev": "node --watch server/index.js",
     "client:dev": "cd client && bun run dev",
     "build": "cd client && bun run build",
-    "start": "bun server/index.js",
+    "start": "concurrently \"bun run server:start\" \"bun run client:start\"",
+    "server:start": "node server/index.js",
+    "client:start": "cd client && bun run start",
     "test": "bun test",
     "setup": "bun install && cd client && bun install"
   },
