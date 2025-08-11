@@ -104,7 +104,7 @@ bun run start
 ### Variables d'environnement
 ```bash
 # .env
-PORT=3001
+PORT=3002
 WEBHOOK_SECRET=your-webhook-secret-here
 ```
 
@@ -114,16 +114,16 @@ WEBHOOK_SECRET=your-webhook-secret-here
 ```bash
 bun run dev
 ```
-L'application sera disponible sur http://localhost:3001
+L'application sera disponible sur http://localhost:3002
 
 ### 2. Configurer vos webhooks
 Pointez vos webhooks Genuka vers :
 ```
-POST http://localhost:3001/webhook
+POST http://localhost:3002/webhook
 ```
 
 ### 3. Interface Web
-Accédez au dashboard sur http://localhost:3001 pour :
+Accédez au dashboard sur http://localhost:3002 pour :
 - Voir les webhooks en temps réel
 - Filtrer et rechercher
 - Analyser les données
