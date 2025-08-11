@@ -1,6 +1,16 @@
-import { Database } from "bun:sqlite";
+// Compatible avec Bun et Node.js
+let Database: any;
+let db: any;
 
-const db = new Database("webhooks.db");
+try {
+  // Essayer d'importer bun:sqlite en premier (pour Bun)
+  Database = (await import("bun:sqlite")).Database;
+  db = new Database("webhooks.db");
+} catch {
+  // Fallback vers better-sqlite3 (pour Node.js/Vercel)
+  const BetterSqlite3 = (await import("better-sqlite3")).default;
+  db = new BetterSqlite3(":memory:"); // En mémoire sur Vercel
+}
 
 // Table principale pour stocker les webhooks
 const createWebhooksTable = `
