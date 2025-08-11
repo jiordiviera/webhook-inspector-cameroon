@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import { WebSocketServer } from 'ws';
 
 let wss = null;
 const clients = new Set();
@@ -7,7 +7,7 @@ const clients = new Set();
  * Configurer le serveur WebSocket
  */
 function setupWebSocket(server) {
-    wss = new WebSocket.Server({ 
+    wss = new WebSocketServer({ 
         server,
         path: '/ws'
     });

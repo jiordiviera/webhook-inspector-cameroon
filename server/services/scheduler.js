@@ -86,4 +86,4 @@ function setupCronJobs() {
     console.log('   - Optimisation DB: lundi à 4h');
 }
 
-module.exports = { setupCronJobs };
+export { setupCronJobs };

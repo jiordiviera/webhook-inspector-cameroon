@@ -20,6 +20,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3002;
 
+
+console.log("test de ")
 // Configuration Express
 app.use(helmet({
     contentSecurityPolicy: false, // Pour permettre les WebSockets
@@ -65,12 +67,6 @@ app.use((err, req, res, next) => {
         timestamp: new Date().toISOString()
     });
 });
-
-// Route React (catch-all) - EN DERNIER après les erreurs
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
-
 // Démarrage du serveur
 async function startServer() {
     try {

@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"bun run server:dev\" \"bun run client:dev\"",
-    "server:dev": "bun --hot server/index.js",
+    "dev": "concurrently \"bun run client:dev\" \"bun run server:dev\"",
+    "server:dev": "node --watch server/index.js",
     "client:dev": "cd client && bun run dev",
     "build": "cd client && bun run build",
     "start": "bun server/index.js",
@@ -17,14 +17,15 @@
   "author": "Genuka Team 🇨🇲",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "sqlite3": "^5.1.6",
     "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
-    "ws": "^8.14.2",
     "node-cron": "^3.0.2",
-    "express-rate-limit": "^7.1.5"
+    "node-fetch": "^3.3.2",
+    "sqlite3": "^5.1.6",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
