@@ -61,7 +61,7 @@ export default async function handler(req, res) {
     }
 
     // Interface HTML
-    if (urlPath === '/' || urlPath === '/index.html') {
+    if (urlPath === '/' || urlPath === '/index.html' || urlPath === '/api/server') {
       const html = `<!DOCTYPE html>
 <html lang="fr">
 <head>
