@@ -13,6 +13,7 @@ console.log("🚀 Serveur en cours de démarrage...");
 // Serveur Bun avec support WebSocket
 const server = Bun.serve({
   port: process.env.PORT || 3001,
+  hostname: "0.0.0.0", // Important pour Render
   
   // Routes HTTP
   fetch(req, server) {

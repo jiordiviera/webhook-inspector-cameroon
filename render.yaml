@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: webhook-inspector-cameroon
+    repo: https://github.com/jiordiviera/webhook-inspector-cameroon
+    branch: main
+    runtime: bun
+    buildCommand: bun install
+    startCommand: bun src/server.ts
+    plan: free
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /
