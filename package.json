@@ -18,7 +18,8 @@
   "license": "MIT",
   "dependencies": {
     "uuid": "^9.0.0",
-    "moment-timezone": "^0.5.43"
+    "moment-timezone": "^0.5.43",
+    "better-sqlite3": "^9.2.2"
   },
   "devDependencies": {
     "@types/bun": "latest",
