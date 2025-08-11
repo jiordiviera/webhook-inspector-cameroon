@@ -10,8 +10,7 @@
     "start": "bun src/server.ts",
     "build": "bun build src/server.ts --outdir ./dist",
     "test": "bun test",
-    "db:init": "bun src/database/init.ts",
-    "vercel-build": "bun build src/server.ts --outdir ./dist"
+    "db:init": "bun src/database/init.ts"
   },
   "keywords": ["webhook", "cameroon", "genuka", "inspector", "debug", "api"],
   "author": "Genuka Team",
