@@ -1,34 +1,24 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "src/server.ts",
-      "use": "@vercel/bun"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/webhook",
-      "dest": "/src/server.ts"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/src/server.ts"
-    },
-    {
-      "src": "/ws",
-      "dest": "/src/server.ts"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/src/server.ts"
-    }
-  ],
   "functions": {
-    "src/server.ts": {
-      "runtime": "bun@latest"
+    "api/server.js": {
+      "runtime": "nodejs18.x"
     }
   },
+  "rewrites": [
+    {
+      "source": "/webhook",
+      "destination": "/api/server"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/server"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/server"
+    }
+  ],
   "env": {
     "PORT": "3000"
   }
